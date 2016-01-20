@@ -9,7 +9,6 @@ class Robot : public SampleRobot {
 	Joystick driveStick;
 public:
 	Robot();
-	virtual ~Robot();
 	
 	void OperatorControl();
 	void Autonomous();
