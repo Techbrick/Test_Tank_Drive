@@ -1,5 +1,4 @@
 #include "Robot.h"
-#include "Constants.cpp"
 
 Robot::Robot() :
 	robotDrive(Constants::driveFrontLeftPin, Constants::driveRearLeftPin, Constants::driveFrontRightPin, Constants::driveRearRightPin),
@@ -18,15 +17,6 @@ void Robot::OperatorControl() //teleop code
 
 		Wait(0.005); // wait 5ms to avoid hogging CPU cycles
 	}
-}
-
-void Robot::Autonomous()
-{
-	;//do nothing
-}
-
-void Robot::Test() {
-	;//do nothing
 }
 
 START_ROBOT_CLASS(Robot);
