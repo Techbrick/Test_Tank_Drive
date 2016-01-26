@@ -13,12 +13,10 @@ void Robot::OperatorControl() //teleop code
 
 	while(IsOperatorControl() && IsEnabled())
 	{
-		robotDrive.TankDrive(0.3,0.3);
-		Wait(1);
-		robotDrive.TankDrive(-0.3,-0.3);
-		Wait(1);
-		robotDrive.TankDrive(0, 0.2);
-		Wait(2);
+		robotDrive.TankDrive(0.5, 0.5);
+		Wait(3);
+		robotDrive.TankDrive(0.5 , -0.5);
+		Wait(3);
 	}
 }
 
