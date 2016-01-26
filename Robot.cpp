@@ -11,12 +11,12 @@ void Robot::OperatorControl() //teleop code
 {
 	robotDrive.SetSafetyEnabled(false);
 
-	while (IsOperatorControl() && IsEnabled())
-	{
-		robotDrive.ArcadeDrive(driveStick, Constants::driveXAxis, driveStick, Constants::driveZAxis);
-
-		Wait(0.005); // wait 5ms to avoid hogging CPU cycles
-	}
+	robotDrive.TankDrive(1,1);
+	Wait(0.5);
+	robotDrive.TankDrive(-1,-1);
+	Wait(1);
+	robotDrive.TankDrive(0, 1);
+	Wait(2);
 }
 
 START_ROBOT_CLASS(Robot);
