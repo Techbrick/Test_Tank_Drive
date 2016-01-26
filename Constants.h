@@ -1,3 +1,6 @@
+#ifndef SRC_CONSTANTS_H
+#define SRC_CONSTANTS_H
+
 namespace Constants {
 	//PWM Out Pins
 	static constexpr int driveFrontLeftPin	= 2;
@@ -11,3 +14,5 @@ namespace Constants {
 	static constexpr int driveYAxis = 1;
 	static constexpr int driveZAxis = 2;	
 }
+
+#endif
