@@ -9,7 +9,7 @@
 class Robot : public SampleRobot {
 	RobotDrive robotDrive;
 	Joystick driveStick;
-	Shooter shooter;
+	//Shooter shooter;
 public:
 	Robot();
 	

@@ -2,8 +2,8 @@
 
 Robot::Robot() :
 	robotDrive(Constants::driveLeftPin, Constants::driveRightPin),
-	driveStick(Constants::driveStickChannel),
-	shooter(Constants::shooterLeftPin, Constants::shooterRightPin)
+	driveStick(Constants::driveStickChannel)
+	//shooter(Constants::shooterLeftPin, Constants::shooterRightPin)
 {
 	robotDrive.SetExpiration(0.1); // safety feature
 }
