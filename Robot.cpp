@@ -1,8 +1,9 @@
 #include "Robot.h"
 
 Robot::Robot() :
-	robotDrive(Constants::driveFrontLeftPin, Constants::driveRearLeftPin, Constants::driveFrontRightPin, Constants::driveRearRightPin),
-	driveStick(Constants::driveStickChannel)
+	robotDrive(Constants::driveLeftPin, Constants::driveRightPin),
+	driveStick(Constants::driveStickChannel),
+	shooter(Constants::shooterLeftPin, Constants::shooterRightPin)
 {
 	robotDrive.SetExpiration(0.1); // safety feature
 }
@@ -13,10 +14,7 @@ void Robot::OperatorControl() //teleop code
 
 	while(IsOperatorControl() && IsEnabled())
 	{
-		robotDrive.TankDrive(0.5, 0.5);
-		Wait(3);
-		robotDrive.TankDrive(0.5 , -0.5);
-		Wait(3);
+		robotDrive.ArcadeDrive(driveStick, Constants::driveXAxis, driveStick, Constants::driveZAxis);
 	}
 }
 
