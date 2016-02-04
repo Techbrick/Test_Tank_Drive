@@ -9,12 +9,12 @@ namespace Constants {
 	//static constexpr int shooterLeftPin = 99;
 	//static constexpr int shooterRightPin = 99;
 	
-	static constexpr int driveStickChannel = 0;
-	static constexpr int shooterStickChannel = 1;
+	static constexpr int driveStickChannel = 1;
+	static constexpr int shooterStickChannel = 0;
 	
-	static constexpr int driveXAxis = 0;
-	static constexpr int driveYAxis = 1;
-	static constexpr int driveZAxis = 2;
+	static constexpr int driveLeftStickX = 0;
+	static constexpr int driveLeftStickY = 1;
+	static constexpr int driveL2 = 3;
 }
 
 #endif

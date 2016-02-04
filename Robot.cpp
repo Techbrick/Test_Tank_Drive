@@ -1,7 +1,10 @@
 #include "Robot.h"
 
+#include <math.h>
+#include <iostream>
+
 Robot::Robot() :
-	robotDrive(Constants::driveLeftPin, Constants::driveRightPin),
+	robotDrive(Constants::driveLeftPin,Constants::driveRightPin),
 	driveStick(Constants::driveStickChannel)
 	//shooter(Constants::shooterLeftPin, Constants::shooterRightPin)
 {
@@ -10,12 +13,23 @@ Robot::Robot() :
 	
 void Robot::OperatorControl() //teleop code
 {
-	robotDrive.SetSafetyEnabled(false);
+	CameraServer::GetInstance()->SetQuality(50);
+	CameraServer::GetInstance()->StartAutomaticCapture("cam0");
 
 	while(IsOperatorControl() && IsEnabled())
 	{
-		robotDrive.ArcadeDrive(driveStick, Constants::driveXAxis, driveStick, Constants::driveZAxis);
+		float throttle = (((-driveStick.GetRawAxis(Constants::driveL2)) + 1.0)/2.0); //[0, 1]
+		float moveValue = throttle * driveStick.GetY();
+		float rotateValue = -driveStick.GetX();
+		
+		SmartDashboard::PutNumber("Throttle Value", throttle);
+		SmartDashboard::PutNumber("Move Value", moveValue);
+		SmartDashboard::PutNumber("Rotate Value", rotateValue);
+		
+		robotDrive.ArcadeDrive(moveValue, rotateValue, true);
 	}
+	
+	 robotDrive.SetSafetyEnabled(true);
 }
 
 START_ROBOT_CLASS(Robot);
