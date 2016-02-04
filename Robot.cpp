@@ -16,7 +16,7 @@ void Robot::OperatorControl() //teleop code
 	{
 		float moveValue = Joystick.GetRawAxis(Constants::PS4MoveJoystick);
 		float rotateValue = Joystick.GetRawAxis(Constants::PS4RotateJoystick);
-		robotDrive.TankDrive(moveValue, rotateValue);
+		robotDrive.TankDrive(moveValue, rotateValue, true);
 	}
 }
 
