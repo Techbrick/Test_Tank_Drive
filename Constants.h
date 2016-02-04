@@ -15,6 +15,9 @@ namespace Constants {
 	static constexpr int driveXAxis = 0;
 	static constexpr int driveYAxis = 1;
 	static constexpr int driveZAxis = 2;
+	
+	static constexpr int PS4MoveJoystick = 0;
+	static constexpr int PS4RotateJoystick = 0;
 }
 
 #endif
