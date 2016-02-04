@@ -18,6 +18,7 @@ namespace Constants {
 	
 	static constexpr int PS4MoveJoystick = 0;
 	static constexpr int PS4RotateJoystick = 0;
+	static constexpr int L2 = 0;
 }
 
 #endif
