@@ -15,6 +15,13 @@ namespace Constants {
 	static constexpr int driveLeftStickX = 0;
 	static constexpr int driveLeftStickY = 1;
 	static constexpr int driveL2 = 3;
+	
+	
+	//Noah's addins for position class
+	static constexpr float xStartPos = 0; //relative to origin
+	static constexpr float yStartPos = 0; //relative to origin
+	static constexpr float towerX = 0; //relative to origin
+	static constexpr float towerY = 0; //relative to origin
 }
 
 #endif
