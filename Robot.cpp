@@ -14,7 +14,7 @@ void threadTestFunction(bool* keepRunning)
 		Wait(1);
 	}
 	
-	SmartDashboard::PutNumber("SmartDash Number", 999);
+	SmartDashboard::PutNumber("SmartDash Number", 99999);
 }
 
 Robot::Robot() :
