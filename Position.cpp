@@ -45,7 +45,7 @@
 		xAcceleration = accel.GetX() * cos((gyro.GetAngle() - 90) * PI / 180); //angle + 90? Will have to test
 		xDistance = .5 * xAcceleration * xAccelTimer.Get() * xAccelTimer.Get();
 		xPosAccel = xPosAccel + xDistance;
-		xAccelTimer.Reset();
+		//xAccelTimer.Reset();
 	}
 
 	void Position::AccelerometerTrackY() {
@@ -60,6 +60,12 @@
 		AccelerometerTrackY();
 		xPos = xPosAccel;
 		yPos = yPosAccel;
+		SmartDashboard::PutNumber("xPos", xPos);
+		SmartDashboard::PutNumber("yPos", yPos);
+		SmartDashboard::PutNumber("xAccel", xAcceleration);
+		SmartDashboard::PutNumber("yAccel", yAcceleration);
+		SmartDashboard::PutNumber("xTimer", xAccelTimer.Get());
+		SmartDashboard::PutNumber("yTimer", yAccelTimer.Get());
 	}
 
 	float Position::GetX() {
